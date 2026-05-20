@@ -913,6 +913,7 @@
   }
   .lightbox-prev { left: 28px; }
   .lightbox-next { right: 28px; }
+    .showcase img.stage { opacity: 1 !important; transform: none !important; }
 
   /* ========== RESPONSIVE ========== */
   @media (max-width: 900px) {
@@ -928,8 +929,8 @@
     .thumb-strip { grid-template-columns: repeat(4, 1fr); }
     .gallery-grid { grid-template-columns: repeat(2, 1fr); }
   }
+
   @media (max-width: 560px) {
-    .showcase img { height: 62vh; object-fit: cover; object-position: center; }
     .top-band { font-size: 9px; letter-spacing: 0.3em; }
     .top-band span::before, .top-band span::after { margin: 0 0.6em; }
     .hero { padding: 60px 20px 50px; }
