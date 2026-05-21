@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hrudhyam Mangalya · Preserving Sacred Memories</title>
+<meta name="description" content="Luxury wedding preservation. Sacred Kerala wedding garlands, bouquets and memories transformed into archival heirloom objects, crafted for generations." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Italiana&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #100a0e;          /* near-black, warm plum tint — barely perceptible */
+    --bg-soft: #1a1016;     /* lifted aubergine-black for photo-section grounds */
+    --bg-card: #1f141b;     /* image placeholder panels */
+    --lavender-glow: #3a2233;   /* deep plum/wine that breathes up in text sections */
+    --lavender-deep: #251420;   /* edge of the glow, fades to --bg */
+    --gold: #c9a566;
+    --gold-bright: #e8d4a3;
+    --gold-deep: #8a6f3d;
+    --cream: #f5ead2;
+    --muted: #8a7d68;
+    --line: rgba(201, 165, 102, 0.18);
+    --line-strong: rgba(201, 165, 102, 0.4);
+    --shadow: 0 30px 80px -20px rgba(0,0,0,0.8);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--cream);
+    font-family: 'EB Garamond', 'Cormorant Garamond', Georgia, serif;
+    font-weight: 400;
+    line-height: 1.65;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Subtle gold grain texture overlay */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image:
+      radial-gradient(ellipse at 20% 0%, rgba(201,165,102,0.08), transparent 50%),
+      radial-gradient(ellipse at 80% 100%, rgba(201,165,102,0.06), transparent 50%);
+    pointer-events: none;
+    z-index: 1;
+  }
+  /* Fine golden speckle grain — drifts very slowly over the purple-black base */
+  body::after {
+    content: '';
+    position: fixed; inset: 0;
+    background-image:
+      radial-gradient(circle at 14% 18%, rgba(232,212,163,0.40) 0.6px, transparent 1.2px),
+      radial-gradient(circle at 30% 64%, rgba(201,165,102,0.35) 0.5px, transparent 1.1px),
+      radial-gradient(circle at 49% 33%, rgba(232,212,163,0.32) 0.5px, transparent 1px),
+      radial-gradient(circle at 65% 80%, rgba(201,165,102,0.40) 0.6px, transparent 1.2px),
+      radial-gradient(circle at 80% 24%, rgba(232,212,163,0.32) 0.5px, transparent 1px),
+      radial-gradient(circle at 90% 58%, rgba(201,165,102,0.35) 0.55px, transparent 1.1px),
+      radial-gradient(circle at 40% 90%, rgba(232,212,163,0.32) 0.5px, transparent 1px),
+      radial-gradient(circle at 8% 80%, rgba(201,165,102,0.32) 0.5px, transparent 1px);
+    background-size: 340px 340px;
+    opacity: 0.55;
+    pointer-events: none;
+    z-index: 1;
+    animation: grainDrift 26s ease-in-out infinite alternate;
+  }
+  @keyframes grainDrift {
+    0%   { transform: translate(0, 0); }
+    100% { transform: translate(-10px, 8px); }
+  }
+
+  /* Top thin gold band */
+  .top-band {
+    position: fixed; top: 0; left: 0; right: 0;
+    height: 36px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    z-index: 100;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Italiana', serif;
+    font-size: 11px;
+    letter-spacing: 0.45em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+  .top-band span::before, .top-band span::after {
+    content: '◆';
+    margin: 0 1.5em;
+    color: var(--gold-deep);
+    font-size: 7px;
+    vertical-align: middle;
+  }
+
+  main { position: relative; z-index: 2; padding-top: 36px; }
+
+  /* ========== HERO ========== */
+  .hero {
+    min-height: calc(100vh - 36px);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 80px 24px 60px;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  /* Cinematic background image with slow drift */
+  .hero-bg {
+    position: absolute;
+    inset: -5%;
+    background-image: url('./interior.png');
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px) brightness(0.55) saturate(1.05);
+    z-index: -3;
+    animation: kenburns 28s ease-in-out infinite alternate;
+  }
+
+  /* Layered darkening — radial vignette pulls focus to centre wordmark */
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at center, rgba(10,8,6,0.85) 0%, rgba(10,8,6,0.7) 35%, rgba(10,8,6,0.55) 70%, rgba(10,8,6,0.85) 100%);
+    z-index: -2;
+  }
+
+  /* Top + bottom gradient bleed for seamless edges */
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to bottom, rgba(10,8,6,0.95) 0%, transparent 18%, transparent 82%, var(--bg) 100%);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  @keyframes kenburns {
+    0%   { transform: scale(1) translate(0, 0); }
+    100% { transform: scale(1.08) translate(-1.5%, 1%); }
+  }
+
+  .hero-logo {
+    width: 200px;
+    height: auto;
+    margin-bottom: 8px;
+    filter: drop-shadow(0 4px 30px rgba(0,0,0,0.7)) drop-shadow(0 2px 14px rgba(201,165,102,0.28));
+    animation: fadeRise 1.4s ease-out 0.2s both;
+  }
+
+  .hero h1 {
+    font-family: 'Italiana', serif;
+    font-size: clamp(48px, 9vw, 124px);
+    color: var(--gold);
+    letter-spacing: 0.04em;
+    line-height: 1.05;
+    font-weight: 400;
+    margin-top: -20px;
+    text-shadow: 0 4px 30px rgba(0,0,0,0.8), 0 2px 12px rgba(0,0,0,0.6);
+    animation: fadeRise 1.4s ease-out 0.5s both;
+  }
+  .hero h1 .amp {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 0.42em;
+    color: var(--gold-bright);
+    letter-spacing: 0.5em;
+    margin-top: 18px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.8);
+  }
+
+  .hero-divider {
+    display: flex; align-items: center; gap: 18px;
+    margin: 36px auto 28px;
+    animation: fadeRise 1.4s ease-out 0.8s both;
+  }
+  .hero-divider .line {
+    width: 80px; height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold) 50%, transparent);
+  }
+  .hero-divider .diamond {
+    color: var(--gold);
+    font-size: 10px;
+  }
+
+  .hero-tag {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(18px, 2.2vw, 24px);
+    color: var(--cream);
+    max-width: 620px;
+    line-height: 1.6;
+    text-shadow: 0 2px 18px rgba(0,0,0,0.9);
+    animation: fadeRise 1.4s ease-out 1.1s both;
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 32px; left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Italiana', serif;
+    font-size: 10px;
+    letter-spacing: 0.5em;
+    color: var(--gold-bright);
+    text-transform: uppercase;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+    animation: fadeRise 1.4s ease-out 1.5s both, pulse 3s ease-in-out 2s infinite;
+  }
+  .hero-scroll::after {
+    content: '';
+    display: block;
+    width: 1px; height: 36px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    margin: 14px auto 0;
+  }
+
+  @keyframes fadeRise {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+
+  /* ========== SHOWCASE BAND (full-width image between hero and philosophy) ========== */
+  .showcase {
+    width: 100%;
+    margin: 0; padding: 0;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--bg-card);
+    line-height: 0;
+  }
+  .showcase img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+  /* Soft gradient bleed top and bottom so the band melts into the black page */
+  .showcase::before, .showcase::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0;
+    height: 14%;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .showcase::before { top: 0; background: linear-gradient(to bottom, var(--bg), transparent); }
+  .showcase::after { bottom: 0; background: linear-gradient(to top, var(--bg), transparent); }
+
+  /* ========== HYBRID LAVENDER GLOW (text sections only) ========== */
+  /* Text sections breathe a soft lavender up through their centre, fading to the
+     near-black base at top and bottom — so transitions stay gradient, never hard seams.
+     Photo sections keep the calm near-black ground (no glow) to protect the imagery. */
+  .philosophy, .promise, .consult {
+    position: relative;
+    isolation: isolate;
+  }
+  .philosophy::after, .promise::after, .consult::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 90% 70% at 50% 50%,
+        var(--lavender-glow) 0%,
+        var(--lavender-deep) 45%,
+        transparent 80%);
+  }
+
+  /* ========== SECTION FRAMEWORK ========== */
+  section {
+    padding: 140px 24px;
+    position: relative;
+  }
+  .container {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+  .narrow {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .eyebrow {
+    font-family: 'Italiana', serif;
+    font-size: 11px;
+    letter-spacing: 0.55em;
+    color: var(--gold);
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 28px;
+    position: relative;
+    padding-left: 50px;
+  }
+  .eyebrow::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 50%;
+    width: 36px; height: 1px;
+    background: var(--gold-deep);
+  }
+  .eyebrow.centered {
+    padding-left: 0;
+  }
+  .eyebrow.centered::before { display: none; }
+
+  h2 {
+    font-family: 'Italiana', serif;
+    font-size: clamp(36px, 5.5vw, 68px);
+    color: var(--gold-bright);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+    margin-bottom: 32px;
+  }
+  h2 .italic {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--cream);
+  }
+
+  h3 {
+    font-family: 'Italiana', serif;
+    font-size: clamp(24px, 2.8vw, 32px);
+    color: var(--gold-bright);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    letter-spacing: 0.02em;
+  }
+
+  p {
+    font-size: clamp(16px, 1.25vw, 18px);
+    color: var(--cream);
+    line-height: 1.75;
+    opacity: 0.88;
+  }
+  p.lead {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(20px, 1.8vw, 26px);
+    line-height: 1.6;
+    color: var(--cream);
+    opacity: 0.95;
+  }
+
+  .section-divider {
+    display: flex; align-items: center; justify-content: center;
+    gap: 18px;
+    margin: 0 auto 50px;
+    width: fit-content;
+  }
+  .section-divider .line {
+    width: 60px; height: 1px;
+    background: var(--gold-deep);
+  }
+  .section-divider .diamond { color: var(--gold); font-size: 9px; }
+
+  /* ========== PHILOSOPHY ========== */
+  .philosophy {
+    padding-top: 140px;
+    padding-bottom: 140px;
+    text-align: center;
+    position: relative;
+  }
+
+  .philosophy h2 {
+    margin-bottom: 40px;
+  }
+  .philosophy .narrow p {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(20px, 1.7vw, 24px);
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+  .philosophy .signature {
+    margin-top: 56px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--gold);
+    font-size: 22px;
+  }
+
+  /* ========== THE OBJECT — split layout ========== */
+  .object {
+    background:
+      linear-gradient(to bottom, transparent 0%, var(--bg-soft) 20%, var(--bg-soft) 80%, transparent 100%);
+  }
+  .object-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+  }
+  .object-image {
+    position: relative;
+  }
+  .object-image img {
+    width: 100%; height: auto;
+    border-radius: 2px;
+    box-shadow: var(--shadow);
+  }
+  .object-image::before {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    border: 1px solid var(--line);
+    pointer-events: none;
+  }
+  .object-image::after {
+    content: '';
+    position: absolute;
+    top: -28px; left: -28px;
+    width: 36px; height: 36px;
+    border-top: 1px solid var(--gold);
+    border-left: 1px solid var(--gold);
+  }
+
+  .object-text .specs {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    padding-top: 36px;
+    border-top: 1px solid var(--line);
+  }
+  .spec dt {
+    font-family: 'Italiana', serif;
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .spec dd {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: var(--cream);
+    line-height: 1.4;
+  }
+  .spec dd em {
+    font-style: italic;
+    color: var(--muted);
+    font-size: 14px;
+    display: block;
+    margin-top: 2px;
+  }
+
+  /* ========== CRAFT — process steps ========== */
+  .craft { text-align: center; }
+  .craft-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 80px;
+    border-top: 1px solid var(--line);
+  }
+  .step {
+    padding: 60px 28px 40px;
+    border-right: 1px solid var(--line);
+    text-align: left;
+    position: relative;
+  }
+  .step:last-child { border-right: none; }
+  .step-num {
+    font-family: 'Italiana', serif;
+    font-size: 14px;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    margin-bottom: 24px;
+    display: block;
+  }
+  .step h4 {
+    font-family: 'Italiana', serif;
+    font-size: 22px;
+    color: var(--gold-bright);
+    font-weight: 400;
+    margin-bottom: 16px;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+  }
+  .step p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--cream);
+    opacity: 0.78;
+  }
+
+  /* Cross-section image */
+  .craft-detail {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    text-align: left;
+  }
+  .craft-detail img {
+    width: 100%; height: auto;
+    border-radius: 2px;
+    box-shadow: var(--shadow);
+  }
+
+  /* ========== VARIATIONS — gallery ========== */
+  .variations {
+    background: linear-gradient(to bottom, transparent, var(--bg-soft) 30%, var(--bg-soft) 70%, transparent);
+  }
+  .variations .header {
+    text-align: center; margin-bottom: 90px;
+  }
+  .var-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  .var-card {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.6s;
+    overflow: hidden;
+  }
+  .var-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--line-strong);
+  }
+  .var-card .img-wrap {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    position: relative;
+  }
+  .var-card img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s ease;
+  }
+  .var-card:hover img {
+    transform: scale(1.04);
+  }
+  .var-card .body {
+    padding: 32px 28px 36px;
+    text-align: center;
+  }
+  .var-card .label {
+    font-family: 'Italiana', serif;
+    font-size: 10px;
+    letter-spacing: 0.5em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .var-card h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+  .var-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    opacity: 0.78;
+  }
+
+  /* ========== PROMISE ========== */
+  .promise {
+    text-align: center;
+  }
+  .promise-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    margin-top: 80px;
+  }
+  .promise-item {
+    padding: 0 20px;
+    position: relative;
+  }
+  .promise-item .icon {
+    font-family: 'Italiana', serif;
+    font-size: 38px;
+    color: var(--gold);
+    margin-bottom: 24px;
+    display: inline-block;
+    width: 70px; height: 70px;
+    line-height: 70px;
+    border: 1px solid var(--line-strong);
+    border-radius: 50%;
+  }
+  .promise-item h4 {
+    font-family: 'Italiana', serif;
+    font-size: 22px;
+    color: var(--gold-bright);
+    font-weight: 400;
+    margin-bottom: 16px;
+    letter-spacing: 0.02em;
+  }
+  .promise-item p {
+    font-size: 15px;
+    line-height: 1.75;
+    opacity: 0.82;
+  }
+
+  /* ========== CONSULTATION ========== */
+  .consult {
+    background: var(--bg-soft);
+    text-align: center;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .consult h2 {
+    margin-bottom: 28px;
+  }
+  .consult .lead {
+    max-width: 640px;
+    margin: 0 auto 56px;
+  }
+
+  .contact-card {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    background: var(--bg);
+    border: 1px solid var(--line-strong);
+    position: relative;
+  }
+  .contact-card::before,
+  .contact-card::after {
+    content: '';
+    position: absolute;
+    width: 24px; height: 24px;
+  }
+  .contact-card::before {
+    top: -1px; left: -1px;
+    border-top: 2px solid var(--gold);
+    border-left: 2px solid var(--gold);
+  }
+  .contact-card::after {
+    bottom: -1px; right: -1px;
+    border-bottom: 2px solid var(--gold);
+    border-right: 2px solid var(--gold);
+  }
+
+  .contact-row {
+    margin-bottom: 36px;
+  }
+  .contact-row:last-child { margin-bottom: 0; }
+  .contact-row .label {
+    font-family: 'Italiana', serif;
+    font-size: 10px;
+    letter-spacing: 0.5em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .contact-row .value {
+    font-family: 'Italiana', serif;
+    font-size: clamp(28px, 3.5vw, 40px);
+    color: var(--cream);
+    letter-spacing: 0.04em;
+    line-height: 1.2;
+  }
+  .contact-row a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s, color 0.3s;
+  }
+  .contact-row a:hover {
+    color: var(--gold-bright);
+    border-bottom-color: var(--gold);
+  }
+  .contact-row .sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--muted);
+    margin-top: 10px;
+  }
+
+  .consult-note {
+    margin-top: 60px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--muted);
+    max-width: 560px;
+    margin-left: auto; margin-right: auto;
+  }
+
+  /* ========== FOOTER ========== */
+  footer {
+    padding: 70px 24px 50px;
+    text-align: center;
+    border-top: 1px solid var(--line);
+  }
+  footer .mark {
+    font-family: 'Italiana', serif;
+    font-size: 22px;
+    color: var(--gold);
+    letter-spacing: 0.3em;
+    margin-bottom: 14px;
+  }
+  footer .tag {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--muted);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  footer .legal {
+    margin-top: 36px;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    opacity: 0.6;
+  }
+
+  /* ========== GALLERY TEASER (thumbnail strip) ========== */
+  .gallery-teaser {
+    padding: 110px 24px 100px;
+    text-align: center;
+    border-top: 1px solid var(--line);
+  }
+  .gallery-teaser .header {
+    margin-bottom: 60px;
+  }
+  .gallery-teaser h3 {
+    font-family: 'Italiana', serif;
+    font-size: clamp(26px, 3vw, 36px);
+    color: var(--gold-bright);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    margin-bottom: 18px;
+  }
+  .gallery-teaser .header p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--muted);
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .thumb-strip {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 18px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .thumb {
+    aspect-ratio: 1;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid var(--line);
+    background: var(--bg-card);
+    transition: border-color 0.4s ease, transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .thumb img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 1s ease, filter 0.5s ease;
+    filter: brightness(0.85) saturate(0.95);
+  }
+  .thumb:hover {
+    border-color: var(--gold);
+    transform: translateY(-4px);
+  }
+  .thumb:hover img {
+    transform: scale(1.06);
+    filter: brightness(1) saturate(1.05);
+  }
+  .thumb::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.4) 100%);
+    opacity: 0;
+    transition: opacity 0.4s;
+    pointer-events: none;
+  }
+  .thumb:hover::after { opacity: 1; }
+  .thumb-num {
+    position: absolute;
+    bottom: 8px; left: 10px;
+    font-family: 'Italiana', serif;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--gold-bright);
+    opacity: 0;
+    transition: opacity 0.4s;
+    z-index: 2;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+  }
+  .thumb:hover .thumb-num { opacity: 1; }
+
+  .thumb-hidden { display: none !important; }
+
+  /* ========== FULL GALLERY (at bottom) ========== */
+  .gallery {
+    padding: 140px 24px;
+    background: linear-gradient(to bottom, transparent, var(--bg-soft) 20%, var(--bg-soft) 80%, transparent);
+  }
+  .gallery .header {
+    text-align: center;
+    margin-bottom: 90px;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+  .gallery-item {
+    cursor: pointer;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--bg-card);
+    aspect-ratio: 4/3;
+    position: relative;
+    transition: border-color 0.5s ease;
+  }
+  .gallery-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 1.4s ease, filter 0.6s ease;
+    filter: brightness(0.9);
+  }
+  .gallery-item:hover {
+    border-color: var(--line-strong);
+  }
+  .gallery-item:hover img {
+    transform: scale(1.04);
+    filter: brightness(1);
+  }
+  .gallery-item::after {
+    content: 'VIEW';
+    position: absolute;
+    bottom: 16px; right: 18px;
+    font-family: 'Italiana', serif;
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    color: var(--gold-bright);
+    opacity: 0;
+    transition: opacity 0.4s;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+  }
+  .gallery-item:hover::after { opacity: 1; }
+
+  /* ========== LIGHTBOX ========== */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 4, 3, 0.96);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    cursor: zoom-out;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .lightbox.open {
+    display: flex;
+    animation: lbFade 0.4s ease;
+  }
+  @keyframes lbFade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  .lightbox img {
+    max-width: 95vw;
+    max-height: 90vh;
+    object-fit: contain;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.7);
+    animation: lbImg 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  @keyframes lbImg {
+    from { opacity: 0; transform: scale(0.96); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+  .lightbox-close {
+    position: absolute;
+    top: 24px; right: 28px;
+    width: 44px; height: 44px;
+    border: 1px solid var(--line-strong);
+    background: transparent;
+    color: var(--gold);
+    font-family: 'Italiana', serif;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: border-color 0.3s, color 0.3s;
+    z-index: 1001;
+  }
+  .lightbox-close:hover {
+    border-color: var(--gold);
+    color: var(--gold-bright);
+  }
+  .lightbox-counter {
+    position: absolute;
+    bottom: 28px; left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Italiana', serif;
+    font-size: 11px;
+    letter-spacing: 0.5em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+  .lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px; height: 50px;
+    border: 1px solid var(--line-strong);
+    background: transparent;
+    color: var(--gold);
+    font-family: 'Italiana', serif;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: border-color 0.3s, color 0.3s;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .lightbox-nav:hover {
+    border-color: var(--gold);
+    color: var(--gold-bright);
+  }
+  .lightbox-prev { left: 28px; }
+  .lightbox-next { right: 28px; }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 900px) {
+    section { padding: 90px 22px; }
+    .object-grid { grid-template-columns: 1fr; gap: 60px; }
+    .craft-grid { grid-template-columns: 1fr 1fr; }
+    .step:nth-child(2) { border-right: none; }
+    .step:nth-child(1), .step:nth-child(2) { border-bottom: 1px solid var(--line); }
+    .craft-detail { grid-template-columns: 1fr; gap: 50px; }
+    .var-grid { grid-template-columns: 1fr; gap: 30px; }
+    .promise-grid { grid-template-columns: 1fr; gap: 50px; }
+    .conserve-grid { grid-template-columns: 1fr; }
+    .thumb-strip { grid-template-columns: repeat(4, 1fr); }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 560px) {
+    .conserve-grid { grid-template-columns: 1fr; }
+    .showcase img { height: 62vh; object-fit: cover; object-position: center; }
+    .top-band { font-size: 9px; letter-spacing: 0.3em; }
+    .top-band span::before, .top-band span::after { margin: 0 0.6em; }
+    .hero { padding: 60px 20px 50px; }
+    .hero-logo { width: 150px; }
+    .craft-grid { grid-template-columns: 1fr; }
+    .step { border-right: none; border-bottom: 1px solid var(--line); }
+    .step:last-child { border-bottom: none; }
+    .contact-card { padding: 44px 24px; }
+    section { padding: 70px 20px; }
+    .thumb-strip { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .gallery-grid { grid-template-columns: 1fr; gap: 20px; }
+    .gallery-teaser { padding: 80px 20px 70px; }
+    .lightbox { padding: 16px; }
+    .lightbox-close { top: 14px; right: 14px; width: 38px; height: 38px; }
+    .lightbox-nav { width: 42px; height: 42px; }
+    .lightbox-prev { left: 12px; }
+    .lightbox-next { right: 12px; }
+  }
+
+  /* ========== PRESERVATION (botanical conservation) ========== */
+  .preservation {
+    background: linear-gradient(to bottom, transparent, var(--lavender-glow) 30%, var(--lavender-glow) 70%, transparent);
+  }
+  .preservation .header {
+    text-align: center;
+    margin-bottom: 80px;
+  }
+  .preservation .lead {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .conserve-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+  .conserve-cell {
+    background: #221520;
+    padding: 50px 38px;
+    text-align: left;
+  }
+  .conserve-cell .num {
+    font-family: 'Italiana', serif;
+    font-size: 12px;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    margin-bottom: 22px;
+    display: block;
+  }
+  .conserve-cell h4 {
+    font-family: 'Italiana', serif;
+    font-size: 21px;
+    color: var(--gold-bright);
+    font-weight: 400;
+    line-height: 1.25;
+    margin-bottom: 14px;
+    letter-spacing: 0.01em;
+  }
+  .conserve-cell p {
+    font-size: 15px;
+    line-height: 1.72;
+    opacity: 0.8;
+  }
+
+  .conserve-statement {
+    max-width: 760px;
+    margin: 80px auto 0;
+    text-align: center;
+    padding-top: 60px;
+    border-top: 1px solid var(--line);
+  }
+  .conserve-statement p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(19px, 1.7vw, 24px);
+    line-height: 1.7;
+    color: var(--cream);
+    opacity: 0.92;
+  }
+
+  /* ========== STAGED IMAGE FADE-IN ========== */
+  /* Images start invisible on a dark placeholder panel, then fade in once loaded */
+  img.stage {
+    opacity: 0;
+    transform: scale(1.015);
+    transition: opacity 0.9s ease, transform 1.1s cubic-bezier(0.2, 0.8, 0.2, 1);
+    background-color: var(--bg-card);
+  }
+  img.stage.loaded {
+    opacity: 1;
+    transform: scale(1);
+  }
+  /* Containers that hold staged images get a faint placeholder tone so empty slots
+     read as intentional dark panels rather than gaps while loading */
+  .thumb, .gallery-item, .object-image, .craft-detail img, .var-card .img-wrap {
+    background-color: var(--bg-card);
+  }
+
+  /* Reveal on scroll */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  .reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<div class="top-band">
+  <span>By Appointment · Chalakudy, Kerala</span>
+</div>
+
+<main>
+
+  <!-- =================== HERO =================== -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <img class="hero-logo" src="./logo.png" alt="Hrudhyam Mangalya emblem" />
+    <h1>
+      Hrudhyam
+      <span class="amp">— Mangalya —</span>
+    </h1>
+    <div class="hero-divider">
+      <span class="line"></span>
+      <span class="diamond">◆</span>
+      <span class="line"></span>
+    </div>
+    <p class="hero-tag">
+      Where the flowers of your wedding day are gathered, stilled,<br/>
+      and given the form of an heirloom.
+    </p>
+    <div class="hero-scroll">Begin</div>
+  </section>
+
+  <!-- =================== SHOWCASE BAND =================== -->
+  <section class="showcase">
+    <img src="./showcase.png" loading="lazy" alt="Hrudhyam Mangalya preserved wedding piece beside a Kerala brass lamp" />
+  </section>
+
+  <!-- =================== PHILOSOPHY =================== -->
+  <section class="philosophy">
+    <div class="narrow reveal">
+      <div class="section-divider">
+        <span class="line"></span><span class="diamond">◆</span><span class="line"></span>
+      </div>
+      <span class="eyebrow centered">Our Philosophy</span>
+      <h2>From ceremony,<br/><span class="italic">into inheritance.</span></h2>
+      <p>
+        In every Kerala home, there is a quiet practice. The wedding garland is laid before the lamp,
+        the bouquet is set upon the shrine, and over the slow seasons that follow, the petals dry and the
+        colour fades. The memory is kept; only its vessel is lost.
+      </p>
+      <p>
+        Hrudhyam Mangalya was built for that moment of fading. We gather the flowers of your wedding
+        day, return them to a state of permanence, and place them within an archival object designed
+        not for a season, but for the generations who will inherit it.
+      </p>
+      <p class="signature">— Preserving sacred memories —</p>
+    </div>
+  </section>
+
+  <!-- =================== GALLERY TEASER =================== -->
+  <section class="gallery-teaser">
+    <div class="reveal">
+      <div class="section-divider">
+        <span class="line"></span><span class="diamond">◆</span><span class="line"></span>
+      </div>
+      <span class="eyebrow centered">Selected Works</span>
+      <div class="header">
+        <h3>A glimpse into the atelier</h3>
+        <p>Pieces from our archive · click to view in full</p>
+      </div>
+
+      <div class="thumb-strip" id="thumbStrip">
+        <div class="thumb" data-index="0"><img src="./gallery-1.png" alt="Hrudhyam Mangalya piece — 1" loading="lazy" class="stage" onload="this.classList.add('loaded')" onerror="this.parentElement.classList.add('thumb-hidden')"/><span class="thumb-num">— I —</span></div>
+        <div class="thumb" data-index="1"><img src="./gallery-2.png" alt="Hrudhyam Mangalya piece — 2" loading="lazy" class="stage" onload="this.classList.add('loaded')" onerror="this.parentElement.classList.add('thumb-hidden')"/><span class="thumb-num">— II —</span></div>
+        <div class="thumb" data-index="2"><img src="./gallery-3.png" alt="Hrudhyam Mangalya piece — 3" loading="lazy" class="stage" onload="this.classList.add('loaded')" onerror="this.parentElement.classList.add('thumb-hidden')"/><span class="thumb-num">— III —</span></div>
+        <div class="thumb" data-index="3"><img src="./gallery-4.png" alt="Hrudhyam Mangalya piece — 4" loading="lazy" class="stage" onload="this.classList.add('loaded')" onerror="this.parentElement.classList.add('thumb-hidden')"/><span class="thumb-num">— IV —</span></div>
+        <div class="thumb" data-index="4"><img src="./gallery-5.png" alt="Hrudhyam Mangalya piece — 5" loading="lazy" class="stage" onload="this.classList.add('loaded')" onerror="this.parentElement.classList.add('thumb-hidden')"/><span class="thumb-num">— V —</span></div>
+        <div class="thumb" data-index="5"><img src="./gallery-6.png" alt="Hrudhyam Mangalya piece — 6" loading="lazy" class="stage" onload="this.classList.add('loaded')" onerror="this.parentElement.classList.add('thumb-hidden')"/><span class="thumb-num">— VI —</span></div>
+        <div class="thumb" data-index="6"><img src="./gallery-7.png" alt="Hrudhyam Mangalya piece — 7" loading="lazy" class="stage" onload="this.classList.add('loaded')" onerror="this.parentElement.classList.add('thumb-hidden')"/><span class="thumb-num">— VII —</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== THE OBJECT =================== -->
+  <section class="object">
+    <div class="container">
+      <div class="object-grid">
+        <div class="object-image reveal">
+          <img src="./hero.png" loading="lazy" class="stage" onload="this.classList.add('loaded')" alt="Hrudhyam Mangalya preservation object with Kerala wedding garland, bouquet and photograph" />
+        </div>
+        <div class="object-text reveal">
+          <span class="eyebrow">The Object</span>
+          <h2>A crystal vitrine for <span class="italic">a sacred moment.</span></h2>
+          <p>
+            Each piece is built around a controlled archival chamber, finished in optical-grade
+            cast acrylic with hand-polished edges. Inside, your varamala, bouquet and wedding
+            photograph are suspended in a still microclimate — supported, never entombed.
+          </p>
+          <p>
+            The petals breathe within their chamber. The colour holds. The form remains.
+          </p>
+          <dl class="specs">
+            <div class="spec">
+              <dt>Format</dt>
+              <dd>Wall &amp; pedestal vitrine<em>landscape · portrait · monolith</em></dd>
+            </div>
+            <div class="spec">
+              <dt>Dimensions</dt>
+              <dd>Atelier sized<em>14″ to 24″ — bespoke per piece</em></dd>
+            </div>
+            <div class="spec">
+              <dt>Materials</dt>
+              <dd>Virgin cast acrylic<em>UV-stable · museum clarity</em></dd>
+            </div>
+            <div class="spec">
+              <dt>Within</dt>
+              <dd>Conditioned chamber<em>archival microclimate · serviceable</em></dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== THE CRAFT =================== -->
+  <section class="craft">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-divider">
+          <span class="line"></span><span class="diamond">◆</span><span class="line"></span>
+        </div>
+        <span class="eyebrow centered">The Craft</span>
+        <h2>Seven weeks. <span class="italic">A single hand.</span></h2>
+        <p class="lead narrow">
+          Every Hrudhyam Mangalya piece is a slow object. The flowers are gathered within hours of
+          the ceremony, and the work that follows unfolds over seven weeks of patient, archival craft.
+        </p>
+      </div>
+
+      <div class="craft-grid">
+        <div class="step reveal">
+          <span class="step-num">I.</span>
+          <h4>The Gathering</h4>
+          <p>Within twelve hours of the ceremony, your garland and bouquet are received in white cotton, by hand, in a silk-lined collection box.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step-num">II.</span>
+          <h4>The Stilling</h4>
+          <p>Each bloom is silica-dried separately, at controlled temperature, then surface-sealed with archival acrylic to lock pigment and form.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step-num">III.</span>
+          <h4>The Composition</h4>
+          <p>Flowers are arranged within the chamber on near-invisible supports, your photograph mounted on cotton rag, the desiccant placed and concealed.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step-num">IV.</span>
+          <h4>The Sealing</h4>
+          <p>The vitrine is closed with a serviceable gasket, the rear plate set behind a hidden bezel, and the piece delivered, by appointment, to your home.</p>
+        </div>
+      </div>
+
+      <div class="craft-detail reveal">
+        <img src="./craft.png" loading="lazy" class="stage" onload="this.classList.add('loaded')" alt="Cross-section detail of the Hrudhyam Mangalya inside-bonded acrylic chamber" />
+        <div>
+          <span class="eyebrow">A Quiet Engineering</span>
+          <h3>The chamber, unseen.</h3>
+          <p>
+            Where a conventional resin block traps a flower in heat and time, our pieces hold the
+            blooms in a still archival air — a chamber whose walls are bonded from within, so the
+            outer faces remain unbroken to the eye.
+          </p>
+          <p>
+            The desiccant cassette is replaceable through a concealed rear panel. The piece is
+            built not to be sealed away from time, but to be cared for through it — like any object
+            meant for inheritance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== PRESERVATION (Botanical Conservation) =================== -->
+  <section class="preservation">
+    <div class="container">
+      <div class="header reveal">
+        <div class="section-divider">
+          <span class="line"></span><span class="diamond">◆</span><span class="line"></span>
+        </div>
+        <span class="eyebrow centered">Botanical Conservation</span>
+        <h2>The science of <span class="italic">slowing time.</span></h2>
+        <p class="lead">
+          We do not simply dry your flowers. We apply the same conservation principles museums use
+          to preserve botanical specimens — controlling the air, the moisture, and the materials so
+          that what fades in a season is held, instead, for decades.
+        </p>
+      </div>
+
+      <div class="conserve-grid">
+        <div class="conserve-cell reveal">
+          <span class="num">01</span>
+          <h4>Gentle Desiccation</h4>
+          <p>
+            Each bloom is dried slowly in fine silica, drawing out moisture without heat or pressure.
+            The cellular structure is preserved, the pigment locked, the form held as it was on the day.
+          </p>
+        </div>
+        <div class="conserve-cell reveal">
+          <span class="num">02</span>
+          <h4>A Controlled Microclimate</h4>
+          <p>
+            The flowers rest within a sealed chamber held at a stable, archival humidity — the same
+            balanced range conservators maintain for herbarium specimens. Neither damp enough to decay,
+            nor so dry as to grow brittle.
+          </p>
+        </div>
+        <div class="conserve-cell reveal">
+          <span class="num">03</span>
+          <h4>Never Touched by Resin</h4>
+          <p>
+            Unlike conventional resin blocks, the flowers never meet curing epoxy. They are isolated
+            from its heat and chemistry entirely, spared the yellowing, clouding and scorching that
+            embedding inflicts over the years.
+          </p>
+        </div>
+        <div class="conserve-cell reveal">
+          <span class="num">04</span>
+          <h4>Archival Materials</h4>
+          <p>
+            Every surface that meets your flowers is chosen for permanence — conservation-grade
+            sealants, acid-free mounts, UV-stable optics — the quiet materials of the museum vitrine,
+            not the craft table.
+          </p>
+        </div>
+        <div class="conserve-cell reveal">
+          <span class="num">05</span>
+          <h4>A Stilled Atmosphere</h4>
+          <p>
+            Within the chamber, air movement and moisture exchange are reduced to near nothing. It is
+            this stillness — not entombment — that lets colour and structure endure far beyond their
+            natural season.
+          </p>
+        </div>
+        <div class="conserve-cell reveal">
+          <span class="num">06</span>
+          <h4>Honest About Time</h4>
+          <p>
+            No preservation halts time entirely; the truthful promise is to slow it. Cared for indoors,
+            away from sun and damp, your flowers age with grace — deepening into the quiet beauty of a
+            preserved botanical specimen rather than fading away.
+          </p>
+        </div>
+      </div>
+
+      <div class="conserve-statement reveal">
+        <p>
+          Conservation is not the denial of age, but its careful stewardship. We cannot make a flower
+          eternal — but we can give it the long, dignified life of a museum specimen, held in still air
+          for the generations who come to look upon it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== VARIATIONS =================== -->
+  <section class="variations">
+    <div class="container">
+      <div class="header reveal">
+        <div class="section-divider">
+          <span class="line"></span><span class="diamond">◆</span><span class="line"></span>
+        </div>
+        <span class="eyebrow centered">The Collections</span>
+        <h2>Three traditions.<br/><span class="italic">One sacred form.</span></h2>
+      </div>
+
+      <div class="var-grid">
+        <div class="var-card reveal">
+          <div class="img-wrap">
+            <img src="./hindu-dark.png" loading="lazy" class="stage" onload="this.classList.add('loaded')" alt="Hindu Kerala wedding preservation with rose and gypsophila garland" />
+          </div>
+          <div class="body">
+            <div class="label">— I —</div>
+            <h3>Mangalyam</h3>
+            <p>For the Kerala Hindu ceremony — rose, jasmine and chrysanthemum, set against the warmth of the brass lamp.</p>
+          </div>
+        </div>
+
+        <div class="var-card reveal">
+          <div class="img-wrap">
+            <img src="./christian.png" loading="lazy" class="stage" onload="this.classList.add('loaded')" alt="Christian wedding preservation with white rose garland and gold-framed photograph" />
+          </div>
+          <div class="body">
+            <div class="label">— II —</div>
+            <h3>Sacrament</h3>
+            <p>For the Christian wedding — ivory roses, gypsophila and chrysanthemum, framed in archival gold, lit as in the chapel.</p>
+          </div>
+        </div>
+
+        <div class="var-card reveal">
+          <div class="img-wrap">
+            <img src="./tulsi.png" loading="lazy" class="stage" onload="this.classList.add('loaded')" alt="Tulsi varamala shadow box preservation for temple weddings" />
+          </div>
+          <div class="body">
+            <div class="label">— III —</div>
+            <h3>Varamala</h3>
+            <p>For the temple ceremony — the sacred tulsi garland silica-dried, mounted in a hardwood shadow box. A devotional commission.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== PROMISE =================== -->
+  <section class="promise">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-divider">
+          <span class="line"></span><span class="diamond">◆</span><span class="line"></span>
+        </div>
+        <span class="eyebrow centered">The Promise</span>
+        <h2>Built to be <span class="italic">cared for.</span></h2>
+        <p class="lead narrow">
+          A wedding heirloom is not finished on the day it is delivered. It is finished by the years that follow it.
+        </p>
+      </div>
+
+      <div class="promise-grid">
+        <div class="promise-item reveal">
+          <span class="icon">◆</span>
+          <h4>A Numbered Register</h4>
+          <p>Every piece is numbered, registered, and entered into our atelier ledger — your work becomes part of an enduring archive in our care.</p>
+        </div>
+        <div class="promise-item reveal">
+          <span class="icon">◇</span>
+          <h4>Considered Care</h4>
+          <p>Each piece is built to be tended over the years — the conditioned desiccant refreshed, the seal inspected, its archival state quietly renewed.</p>
+        </div>
+        <div class="promise-item reveal">
+          <span class="icon">✦</span>
+          <h4>Honest Materials</h4>
+          <p>No thick resin entombment. No heat. No yellowing over decades. The flowers are held in still air, the way museums preserve what matters.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== CONSULTATION =================== -->
+  <section class="consult" id="consult">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-divider">
+          <span class="line"></span><span class="diamond">◆</span><span class="line"></span>
+        </div>
+        <span class="eyebrow centered">A Consultation</span>
+        <h2>By appointment <span class="italic">only.</span></h2>
+        <p class="lead">
+          Hrudhyam Mangalya is made one piece at a time. We accept a small number of commissions
+          each season, and every consultation begins in conversation.
+        </p>
+      </div>
+
+      <div class="contact-card reveal">
+        <div class="contact-row">
+          <div class="label">— Speak With The Atelier —</div>
+          <div class="value">
+            <a href="tel:+919986898076">+91 99868 98076</a>
+          </div>
+          <div class="sub">Calls &amp; messages received with care</div>
+        </div>
+
+        <div class="contact-row">
+          <div class="label">— The Workshop —</div>
+          <div class="value">Chalakudy</div>
+          <div class="sub">Thrissur · Kerala · India</div>
+        </div>
+      </div>
+
+      <p class="consult-note reveal">
+        Pieces commissioned within seventy-two hours of the ceremony hold their colour the longest.
+        We are glad to receive your call before the wedding day itself.
+      </p>
+    </div>
+  </section>
+
+  <!-- =================== FULL GALLERY =================== -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="header reveal">
+        <div class="section-divider">
+          <span class="line"></span><span class="diamond">◆</span><span class="line"></span>
+        </div>
+        <span class="eyebrow centered">The Gallery</span>
+        <h2>Pieces from <span class="italic">the atelier.</span></h2>
+        <p class="lead narrow">Each commission is bespoke. A small selection from our archive — click any image to view at full resolution.</p>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <div class="gallery-item reveal" data-index="0"><img src="./gallery-1.png" alt="Atelier piece — 1" loading="lazy" class="stage" onload="this.classList.add('loaded')" onerror="this.parentElement.classList.add('thumb-hidden')"/></div>
+        <div class="gallery-item reveal" data-index="1"><img src="./gallery-2.png" alt="Atelier piece — 2" loading="lazy" class="stage" onload="this.classList.add('loaded')" onerror="this.parentElement.classList.add('thumb-hidden')"/></div>
+        <div class="gallery-item reveal" data-index="2"><img src="./gallery-3.png" alt="Atelier piece — 3" loading="lazy" class="stage" onload="this.classList.add('loaded')" onerror="this.parentElement.classList.add('thumb-hidden')"/></div>
+        <div class="gallery-item reveal" data-index="3"><img src="./gallery-4.png" alt="Atelier piece — 4" loading="lazy" class="stage" onload="this.classList.add('loaded')" onerror="this.parentElement.classList.add('thumb-hidden')"/></div>
+        <div class="gallery-item reveal" data-index="4"><img src="./gallery-5.png" alt="Atelier piece — 5" loading="lazy" class="stage" onload="this.classList.add('loaded')" onerror="this.parentElement.classList.add('thumb-hidden')"/></div>
+        <div class="gallery-item reveal" data-index="5"><img src="./gallery-6.png" alt="Atelier piece — 6" loading="lazy" class="stage" onload="this.classList.add('loaded')" onerror="this.parentElement.classList.add('thumb-hidden')"/></div>
+        <div class="gallery-item reveal" data-index="6"><img src="./gallery-7.png" alt="Atelier piece — 7" loading="lazy" class="stage" onload="this.classList.add('loaded')" onerror="this.parentElement.classList.add('thumb-hidden')"/></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== LIGHTBOX =================== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox-close" id="lbClose" aria-label="Close">✕</button>
+    <button class="lightbox-nav lightbox-prev" id="lbPrev" aria-label="Previous">‹</button>
+    <img id="lbImage" src="" alt="" />
+    <button class="lightbox-nav lightbox-next" id="lbNext" aria-label="Next">›</button>
+    <div class="lightbox-counter" id="lbCounter"></div>
+  </div>
+
+  <!-- =================== FOOTER =================== -->
+  <footer>
+    <div class="mark">H · M</div>
+    <div class="tag">Hrudhyam Mangalya · Preserving Sacred Memories</div>
+    <div class="legal">© Hrudhyam Mangalya Atelier · Chalakudy, Kerala</div>
+  </footer>
+
+</main>
+
+<script>
+  // ===== Staged image fade-in: catch images already complete from cache =====
+  function settleStagedImages() {
+    document.querySelectorAll('img.stage').forEach(img => {
+      if (img.complete && img.naturalWidth > 0) {
+        img.classList.add('loaded');
+      }
+    });
+  }
+  settleStagedImages();
+  window.addEventListener('load', settleStagedImages);
+
+  // Slow, editorial reveal on scroll
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  els.forEach(el => io.observe(el));
+
+  // ===== Gallery + Lightbox =====
+  const lightbox  = document.getElementById('lightbox');
+  const lbImage   = document.getElementById('lbImage');
+  const lbClose   = document.getElementById('lbClose');
+  const lbPrev    = document.getElementById('lbPrev');
+  const lbNext    = document.getElementById('lbNext');
+  const lbCounter = document.getElementById('lbCounter');
+
+  function getAvailableImages() {
+    const items = document.querySelectorAll('#galleryGrid .gallery-item');
+    const available = [];
+    items.forEach(item => {
+      if (!item.classList.contains('thumb-hidden')) {
+        const img = item.querySelector('img');
+        available.push({ src: img.src, alt: img.alt });
+      }
+    });
+    return available;
+  }
+
+  let currentIdx = 0;
+  let imageList  = [];
+
+  function openLightbox(index) {
+    imageList = getAvailableImages();
+    if (imageList.length === 0) return;
+    currentIdx = Math.min(index, imageList.length - 1);
+    showImage();
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function showImage() {
+    const item = imageList[currentIdx];
+    lbImage.src = item.src;
+    lbImage.alt = item.alt;
+    lbCounter.textContent = (currentIdx + 1) + ' / ' + imageList.length;
+    lbPrev.style.visibility = imageList.length > 1 ? 'visible' : 'hidden';
+    lbNext.style.visibility = imageList.length > 1 ? 'visible' : 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function navigate(direction) {
+    currentIdx = (currentIdx + direction + imageList.length) % imageList.length;
+    showImage();
+  }
+
+  function thumbIndexToVisibleIndex(rawIdx) {
+    imageList = getAvailableImages();
+    const items = document.querySelectorAll('#galleryGrid .gallery-item');
+    let visibleCount = 0;
+    for (let i = 0; i < items.length; i++) {
+      if (items[i].classList.contains('thumb-hidden')) continue;
+      if (i === rawIdx) return visibleCount;
+      visibleCount++;
+    }
+    return 0;
+  }
+
+  document.querySelectorAll('#thumbStrip .thumb').forEach(thumb => {
+    thumb.addEventListener('click', () => {
+      const rawIdx = parseInt(thumb.dataset.index, 10);
+      const targetIdx = thumbIndexToVisibleIndex(rawIdx);
+      const gallerySection = document.getElementById('gallery');
+      gallerySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setTimeout(() => openLightbox(targetIdx), 700);
+    });
+  });
+
+  document.querySelectorAll('#galleryGrid .gallery-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const rawIdx = parseInt(item.dataset.index, 10);
+      openLightbox(thumbIndexToVisibleIndex(rawIdx));
+    });
+  });
+
+  lbClose.addEventListener('click', closeLightbox);
+  lbPrev.addEventListener('click', (e) => { e.stopPropagation(); navigate(-1); });
+  lbNext.addEventListener('click', (e) => { e.stopPropagation(); navigate(1);  });
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox || e.target === lbImage) closeLightbox();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape')      closeLightbox();
+    if (e.key === 'ArrowLeft')   navigate(-1);
+    if (e.key === 'ArrowRight')  navigate(1);
+  });
+</script>
+
+</body>
+</html>
